@@ -112,6 +112,23 @@ public class TaskServiceImpl implements TaskService {
         }
     }
 
+    @Override
+    public List<Task> pendingTasks(Long id){
+        return taskRepository.pendingTask(id);
+    }
+    @Override
+    public List<Task> TaskIn_Progress(Long id){
+        return taskRepository.in_progressTask(id);
+    }
+    @Override
+    public List<Task> completedTask(Long id){
+        return taskRepository.completedTask(id);
+    }
+
+    @Override
+    public List<Task> ignoredTask(Long id){
+        return taskRepository.ignoredTask(id);
+    }
 
     private boolean isDeadLineExceeded(Task task){
         LocalDate currentDate = LocalDate.now();

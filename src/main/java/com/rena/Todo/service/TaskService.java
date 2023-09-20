@@ -22,4 +22,12 @@ public interface TaskService {
     String changeTaskStatus(Long id);
 
     void deactivateIgnoredTask(Long id);
+
+    List<Task> pendingTasks(Long id);
+
+    List<Task> TaskIn_Progress(Long id);
+
+    List<Task> completedTask(Long id);
+
+    List<Task> ignoredTask(Long id);
 }

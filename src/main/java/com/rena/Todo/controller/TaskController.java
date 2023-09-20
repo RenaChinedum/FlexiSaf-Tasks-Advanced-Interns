@@ -59,4 +59,23 @@ public class TaskController {
     }
 
 
+    @GetMapping("/pending/{id}")
+    public ResponseEntity<List<Task>> pendingTask (@PathVariable Long id){
+        return ResponseEntity.ok(taskService.pendingTasks(id));
+    }
+
+    @GetMapping("/in_progress/{id}")
+    public ResponseEntity<List<Task>> in_progressTask (@PathVariable Long id){
+        return ResponseEntity.ok(taskService.TaskIn_Progress(id));
+    }
+
+    @GetMapping("/completed/{id}")
+    public ResponseEntity<List<Task>> completedTask (@PathVariable Long id){
+        return ResponseEntity.ok(taskService.completedTask(id));
+    }
+
+    @GetMapping("/ignored/{id}")
+    public ResponseEntity<List<Task>> ignoredTask (@PathVariable Long id){
+        return ResponseEntity.ok(taskService.ignoredTask(id));
+    }
 }
